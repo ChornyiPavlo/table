@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabletop Kingdom pin-up - Hobi, Doyası ve Eğlence</title>
+    <meta name="description"
+          content="Tabletop Kingdom pin-up hobi, boş zaman ve eğlence olarak keşfedin. Harika oyunlar ve topluluk etkinlikleriyle dolu bir deneyim.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-48x48.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <link rel="preload" href="img/1_engaging_and_vibrant_scene_for_a_we_2.jpg" as="image">
+    <style>
+
+      body {
+        font-family: Montserrat, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f5f5f5;
+        color: #333;
+      }
+
+      header {
+        background-image: url('img/1_engaging_and_vibrant_scene_for_a_we_2.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        padding: 60px 10px;
+        text-align: center;
+        color: white;
+      }
+
+      nav {
+        margin: 10px 0;
+      }
+
+      nav a {
+        color: white;
+        margin: 0 15px;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      .container {
+        max-width: 1220px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      h1, h2, h3 {
+        color: #7B68EE;
+      }
+
+      .main-image {
+        width: 100%;
+        max-height: 300px;
+        object-fit: cover;
+        border-radius: 8px;
+      }
+
+      section {
+        margin-bottom: 20px;
+      }
+
+      .image-placeholder {
+        background-color: #eaeaea;
+        height: auto;
+        margin: 10px 0;
+        border-radius: 8px;
+      }
+
+      footer {
+        text-align: center;
+        margin-top: 20px;
+        padding: 10px 0;
+        background-color: #7B68EE;
+        color: white;
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          padding: 10px;
+        }
+
+        nav a {
+          margin: 10px 10px;
+          display: inline-flex;
+        }
+      }
+
+      .slider-container {
+        width: 100%;
+        max-width: 1220px;
+        height: 340px;
+        margin: 20px auto;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .slider {
+        display: flex;
+        width: 300%;
+        height: 100%;
+        transition: transform 0.5s ease-in-out;
+      }
+
+      .slide {
+        width: 100%;
+        height: 100%;
+        flex: 0 0 33.3333%;
+        background-size: cover;
+        background-position: center;
+      }
+
+      /* Example background images */
+      .slide-1 {
+        background-image: url('img/2_an_engaging_and_vibrant_scene_for_a_we_2.jpg'); /* Replace with your image */
+      }
+
+      .slide-2 {
+        background-image: url('img/4_an_engaging_and_vibrant_scene_for_a_we_0.jpg'); /* Replace with your image */
+      }
+
+      .slide-3 {
+        background-image: url('img/4_an_engaging_and_vibrant_scene_for_a_we_1.jpg'); /* Replace with your image */
+      }
+
+      /* Navigation buttons */
+      .prev, .next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        z-index: 1;
+      }
+
+      .prev {
+        left: 10px;
+      }
+
+      .next {
+        right: 10px;
+      }
+
+      /* Dots */
+      .dots {
+        text-align: center;
+        margin-top: 10px;
+      }
+
+      .dot {
+        height: 15px;
+        width: 15px;
+        margin: 0 5px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        cursor: pointer;
+      }
+
+      .active {
+        background-color: #7B68EE;
+      }
+
+      @media (max-width: 768px) {
+        .slider-container {
+          height: 240px;
+        }
+
+        .prev, .next {
+          padding: 8px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .slider-container {
+          height: 180px;
+        }
+      }
+
+
+      .cookie-popup {
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #7B68EE;
+        color: white;
+        padding: 20px;
+        border-radius: 5px;
+        display: none; /* Initially hidden */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        z-index: 1000;
+      }
+
+      .cookie-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      button {
+        margin-top: 10px;
+        background-color: white;
+        color: #7B68EE;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+
+      button:hover {
+        background-color: #f1f1f1;
+      }
+
+
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Pin-up: Tabletop Kingdom - Hobi, Doyası ve Eğlence</h1>
+    <nav>
+        <a href="index.html">Ana Sayfa</a>
+        <a href="index.html#about"> Tabletop Kingdom Hakkında</a>
+        <a href="policy.html">Gizlilik Politikası</a>
+        <a href="terms.html">Şartlar ve koşullar</a>
+        <a href="index.html#contact">İletişim</a>
+        <a href="tel:+994502310106">+994502310106</a>
+    </nav>
+</header>
+
+<div class="container">
+    <section>
+        <h1>Şartları ve Koşulları</h1>
+        <p>info@pinupaz.tabletop.com.ua Kullanım Şartları ve Koşulları</p>
+        <p>Bu kullanım şartları ve koşulları (“Koşullar”), info@pinupaz.tabletop.com.ua web sitesini (“Site”) ziyaret eden herkes (“Kullanıcı”) için geçerlidir.</p>
+        <h3>Kabul Edilme</h3>
+        <p>Siteyi ziyaret ederek veya kullanarak, Kullanıcı bu Koşulları kabul etmiş olur. Kullanıcı bu Koşullara uymadığı takdirde Siteyi kullanmamalıdır.</p>
+        <h3>Kullanım Hakları ve Sorumluluklar</h3>
+        <li>a. Kullanıcı, Siteyi yalnızca yasal amaçlar için kullanabilir.</li>
+        <li>b. Kullanıcı, Site üzerinde başkalarının haklarına zarar verecek, huzursuzluk çıkaracak veya yasa dışı faaliyetlerde bulunacak herhangi bir eylemden kaçınmalıdır.</li>
+        <h3>Gizlilik Politikas</h3>
+        <p>Siteye erişim ve kullanım, Kullanıcının gizlilik politikamızı kabul ettiği anlamına gelir. Daha fazla bilgi için lütfen gizlilik politikamızı inceleyiniz.</p>
+        <h3>Telif Hakkı ve İçerik</h3>
+        <li>a. Site üzerindeki tüm içerik ve materyaller telif hakkına tabidir. İzinsiz kullanımı yasaktır.</li>
+        <li>b. Kullanıcılar, Site üzerinde paylaştıkları içeriklerin telif haklarına sahip olduğunu beyan ederler. Site yönetimi, telif hakkı ihlalleri konusunda gereken adımları atma hakkını saklı tutar.</li>
+        <h3>Hizmet Değişiklikleri</h3>
+        <p>Site yönetimi, Siteyi herhangi bir zamanda önceden haber vermeden değiştirme veya sonlandırma hakkını saklı tutar.</p>
+        <h3>Sorumluluk Reddi</h3>
+        <p>Site yönetimi, Site üzerinde sunulan içeriklerin doğruluğu, güncelliği veya eksiksizliği konusunda herhangi bir garanti vermez. Kullanıcılar Siteyi kendi sorumlulukları altında kullanır.</p>
+        <h3>Bağlantılar</h3>
+        <p>Site, diğer web sitelerine bağlantılar içerebilir. Bu bağlantılar yalnızca kullanıcıların kolaylık sağlaması içindir. Bağlantı verilen sitelerin içeriği üzerinde kontrolümüz yoktur ve bu sitelerin içeriği veya kullanımıyla ilgili sorumluluk kabul etmeyiz.</p>
+        <h3>Uygulanabilir Kanunlar</h3>
+        <p>Bu Koşullar ve Site üzerindeki herhangi bir anlaşmazlık, Ukrayna yasalarına tabi olacaktır.</p>
+    </section>
+</div>
+
+<footer>
+    <p>&copy; 2024 Tabletop Kingdom. Tüm hakları saklıdır. | Nizami 48 Baku AZ 1005, Nizami St, Baku 1000, Azerbaijan |
+        +994502310106 | info@pinupaz.tabletop.com.ua</p>
+</footer>
+
+<div id="cookie-popup" class="cookie-popup">
+    <div class="cookie-content">
+        <h2>Cookie Kullanım Anlaşması</h2>
+        <p>Web sitemizde kullanıcı deneyiminizi geliştirmek için çerezler kullanıyoruz. Sitemizi kullanmaya devam
+            ederek, çerezleri kabul ettiğinizi onaylamış olursunuz.</p>
+        <button id="accept-btn">Kabul Et</button>
+    </div>
+</div>
+
+
+<script>
+    let currentIndex = 0;
+    const slides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.dot');
+    const slider = document.getElementById('slider');
+
+    document.getElementById('nextBtn').addEventListener('click', nextSlide);
+    document.getElementById('prevBtn').addEventListener('click', prevSlide);
+
+    function showSlide(index) {
+        slider.style.transform = `translateX(${-index * 100 / slides.length}%)`;
+        dots.forEach(dot => dot.classList.remove('active'));
+        dots[index].classList.add('active');
+    }
+
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % slides.length;
+        showSlide(currentIndex);
+    }
+
+    function prevSlide() {
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        showSlide(currentIndex);
+    }
+
+    function currentSlide(index) {
+        currentIndex = index - 1;
+        showSlide(currentIndex);
+    }
+
+    // Initialize the first slide
+    showSlide(currentIndex);
+
+    // Auto-play the slider
+    setInterval(nextSlide, 5000); // Change slide every 5 seconds
+</script>
+
+<script>
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const cookiePopup = document.getElementById('cookie-popup');
+        const acceptBtn = document.getElementById('accept-btn');
+
+        if (!localStorage.getItem('cookieConsent')) {
+            cookiePopup.style.display = 'block'; // Show the popup
+        }
+
+        acceptBtn.addEventListener('click', function () {
+            localStorage.setItem('cookieConsent', 'accepted'); // Set cookie consent
+            cookiePopup.style.display = 'none'; // Hide the popup
+        });
+    });
+
+
+</script>
+
+</body>
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Tabletop Kingdom pin-up hobi",
+        "url": "",
+        "logo": "/favicon/favicon.ico"
+    }
+</script>
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WPHeader",
+        "headline": "Tabletop Kingdom pin-up hobi",
+        "description": "Tabletop Kingdom pin-up hobi, boş zaman ve eğlence olarak keşfedin. Harika oyunlar ve topluluk etkinlikleriyle dolu bir deneyim.",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Tabletop Kingdom pin-up hobi",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "/favicon/favicon.ico"
+            }
+        }
+    }
+</script>
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Tabletop Kingdom pin-up hobi",
+        "description": "Tabletop Kingdom pin-up hobi, boş zaman ve eğlence olarak keşfedin. Harika oyunlar ve topluluk etkinlikleriyle dolu bir deneyim.",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Tabletop Kingdom pin-up hobi"
+        },
+        "license": "A license document that applies to this content, typically indicated by URL"
+    }
+</script>
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SiteNavigationElement",
+        "name": "Main Navigation",
+        "url": "",
+        "hasPart": [
+            {
+                "@type": "WebPage",
+                "name": "Home",
+                "url": ""
+            },
+            {
+                "@type": "WebPage",
+                "name": "Policy",
+                "url": "/policy.html"
+            },
+            {
+                "@type": "WebPage",
+                "name": "Terms of Conditions",
+                "url": "/terms.html"
+            }
+        ]
+    }
+</script>
+</html>

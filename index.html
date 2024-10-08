@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabletop Kingdom pin-up - Hobi, Doyası ve Eğlence</title>
+    <meta name="description"
+          content="Tabletop Kingdom pin-up hobi, boş zaman ve eğlence olarak keşfedin. Harika oyunlar ve topluluk etkinlikleriyle dolu bir deneyim.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-48x48.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <link rel="preload" href="img/1_engaging_and_vibrant_scene_for_a_we_2.jpg" as="image">
+    <style>
+
+      body {
+        font-family: Montserrat, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f5f5f5;
+        color: #333;
+      }
+
+      header {
+        background-image: url('img/1_engaging_and_vibrant_scene_for_a_we_2.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        padding: 60px 10px;
+        text-align: center;
+        color: white;
+      }
+
+      nav {
+        margin: 10px 0;
+      }
+
+      nav a {
+        color: white;
+        margin: 0 15px;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      .container {
+        max-width: 1220px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      h1, h2, h3 {
+        color: #7B68EE;
+      }
+
+      .main-image {
+        width: 100%;
+        max-height: 300px;
+        object-fit: cover;
+        border-radius: 8px;
+      }
+
+      section {
+        margin-bottom: 20px;
+      }
+
+      .image-placeholder {
+        background-color: #eaeaea;
+        height: auto;
+        margin: 10px 0;
+        border-radius: 8px;
+      }
+
+      footer {
+        text-align: center;
+        margin-top: 20px;
+        padding: 10px 0;
+        background-color: #7B68EE;
+        color: white;
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          padding: 10px;
+        }
+
+        nav a {
+          margin: 10px 10px;
+          display: inline-flex;
+        }
+      }
+
+      .slider-container {
+        width: 100%;
+        max-width: 1220px;
+        height: 340px;
+        margin: 20px auto;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .slider {
+        display: flex;
+        width: 300%;
+        height: 100%;
+        transition: transform 0.5s ease-in-out;
+      }
+
+      .slide {
+        width: 100%;
+        height: 100%;
+        flex: 0 0 33.3333%;
+        background-size: cover;
+        background-position: center;
+      }
+
+      /* Example background images */
+      .slide-1 {
+        background-image: url('img/2_an_engaging_and_vibrant_scene_for_a_we_2.jpg'); /* Replace with your image */
+      }
+
+      .slide-2 {
+        background-image: url('img/4_an_engaging_and_vibrant_scene_for_a_we_0.jpg'); /* Replace with your image */
+      }
+
+      .slide-3 {
+        background-image: url('img/4_an_engaging_and_vibrant_scene_for_a_we_1.jpg'); /* Replace with your image */
+      }
+
+      /* Navigation buttons */
+      .prev, .next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        z-index: 1;
+      }
+
+      .prev {
+        left: 10px;
+      }
+
+      .next {
+        right: 10px;
+      }
+
+      /* Dots */
+      .dots {
+        text-align: center;
+        margin-top: 10px;
+      }
+
+      .dot {
+        height: 15px;
+        width: 15px;
+        margin: 0 5px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        cursor: pointer;
+      }
+
+      .active {
+        background-color: #7B68EE;
+      }
+
+      @media (max-width: 768px) {
+        .slider-container {
+          height: 240px;
+        }
+
+        .prev, .next {
+          padding: 8px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .slider-container {
+          height: 180px;
+        }
+      }
+
+
+      .cookie-popup {
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #7B68EE;
+        color: white;
+        padding: 20px;
+        border-radius: 5px;
+        display: none; /* Initially hidden */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        z-index: 1000;
+      }
+
+      .cookie-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      button {
+        margin-top: 10px;
+        background-color: white;
+        color: #7B68EE;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+
+      button:hover {
+        background-color: #f1f1f1;
+      }
+
+
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Pin-up: Tabletop Kingdom - Hobi, Doyası ve Eğlence</h1>
+    <nav>
+        <a href="index.html">Ana Sayfa</a>
+        <a href="#about"> Tabletop Kingdom Hakkında</a>
+        <a href="policy.html">Gizlilik Politikası</a>
+        <a href="terms.html">Şartlar ve koşullar</a>
+        <a href="#contact">İletişim</a>
+        <a href="tel:+994502310106">+994502310106</a>
+    </nav>
+</header>
+
+<div class="container">
+    <img src="img/5_991038d93afd.jpeg" alt="Tabletop Kingdom pin-up" class="main-image">
+
+    <section id="about">
+        <h2>Tabletop Kingdom Hakkında</h2>
+        <p>
+            Tabletop Kingdom, masa oyunlarını bir hobi, boş zaman etkinliği ve eğlence olarak keşfetmek için mükemmel
+            bir yerdir. Birçok farklı türde masa oyunu ile hem yeni başlayanlar hem de deneyimli oyuncular için çeşitli
+            seçenekler sunuyoruz. Pin-up ruhunu yansıtan renkli ve canlı bir ortamda, her oyun sever için bir şeyler
+            bulmak mümkün. Tabletop Kingdom, eğlenceli ve sosyal bir ortamda oyun oynamanın keyfini çıkarırken, aynı
+            zamanda topluluğumuzla bağlantı kurma fırsatı sunuyor. Masa oyunları, strateji, şans ve sosyal etkileşim
+            gerektiren oyunlarla dolu, herkesin katılabileceği bir hobi olarak boş zamanınızı değerlendirmek ve eğlence
+            dolu anlar yaşamak için harika bir seçenektir.
+        </p>
+        <div class="image-placeholder"><img src="img/6_b651-64ae5c5d3437.jpeg" class="main-image">
+        </div>
+    </section>
+
+    <section id="games">
+        <h2>Oyunlar: Hobi, Eğlence ve Boş Zamanın Keyfi</h2>
+        <p>
+            Merkezimizde birçok farklı masa oyunu türü bulunmaktadır. Strateji oyunları, kart oyunları, rol yapma
+            oyunları ve daha fazlası! Hobi olarak masa oyunlarına ilgi duyan herkes için bir şeyler var. Oyunlarımız,
+            yalnızca eğlence sunmakla kalmayıp, aynı zamanda düşünme becerilerinizi geliştirmeye de yardımcı olur. Boş
+            zamanlarınızı keyifli ve verimli geçirmek için mükemmel bir fırsat. Tabletop Kingdom'da oyun oynarken yeni
+            arkadaşlar edinme şansınız da var, böylece sosyal bir pin-up ruhuyla hem eğlenip hem de toplulukla bağlantı
+            kurabilirsiniz. </p>
+        <div class="image-placeholder"></div>
+    </section>
+
+    <div class="slider-container">
+        <div class="slider" id="slider">
+            <div class="slide slide-1"></div>
+            <div class="slide slide-2"></div>
+            <div class="slide slide-3"></div>
+        </div>
+        <button class="prev" id="prevBtn">&#10094;</button>
+        <button class="next" id="nextBtn">&#10095;</button>
+    </div>
+
+    <div class="dots" id="dots">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+
+    <section id="events">
+        <h2>Etkinlikler: Pin-Up Ruhuyla Eğlence Dolu Anlar</h2>
+        <p>
+            Tabletop Kingdom'da düzenli olarak pin-up ruhunu yansıtan oyun etkinlikleri ve turnuvalar
+            gerçekleştiriyoruz. Topluluğumuzla bir araya gelerek farklı oyunlar oynayıp yeni insanlarla
+            tanışabilirsiniz. Etkinliklerimiz, boş zamanlarınızı değerlendirmek ve eğlence dolu anlar yaşamak için
+            harika bir fırsattır. Herkesin katılabileceği etkinlikler düzenliyoruz, böylece her yaştan oyuncu bu hobiden
+            keyif alabilir. Tabletop Kingdom’da, oyun dünyasının sunduğu sosyal ve eğlenceli atmosferi keşfederek
+            unutulmaz anılar biriktirebilirsiniz </p>
+        <div class="image-placeholder"><img src="img/7_aef3-37568d72e257.jpeg" class="main-image"></div>
+    </section>
+
+    <section id="contact">
+        <h2> İletişim: Boş Zamanınızı Değerlendirmek İçin Bizimle Bağlantı Kurun</h2>
+        <p>
+            Tabletop Kingdom hakkında daha fazla bilgi almak veya pin-up ruhunu yansıtan etkinliklerimize katılmak için
+            bizimle iletişime geçin. Bize e-posta gönderin ya da sosyal medya hesaplarımızı takip edin. Boş
+            zamanlarınızı keyifli geçirmek, yeni bir hobi edinmek ve eğlence dolu bir deneyim yaşamak için sizi aramızda
+            görmekten mutluluk duyarız!
+        </p>
+    </section>
+</div>
+
+<footer>
+    <p>&copy; 2024 Tabletop Kingdom. Tüm hakları saklıdır. | Nizami 48 Baku AZ 1005, Nizami St, Baku 1000, Azerbaijan |
+        +994502310106 | info@pinupaz.tabletop.com.ua</p>
+</footer>
+
+<div id="cookie-popup" class="cookie-popup">
+    <div class="cookie-content">
+        <h2>Cookie Kullanım Anlaşması</h2>
+        <p>Web sitemizde kullanıcı deneyiminizi geliştirmek için çerezler kullanıyoruz. Sitemizi kullanmaya devam
+            ederek, çerezleri kabul ettiğinizi onaylamış olursunuz.</p>
+        <button id="accept-btn">Kabul Et</button>
+    </div>
+</div>
+
+
+<script>
+    let currentIndex = 0;
+    const slides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.dot');
+    const slider = document.getElementById('slider');
+
+    document.getElementById('nextBtn').addEventListener('click', nextSlide);
+    document.getElementById('prevBtn').addEventListener('click', prevSlide);
+
+    function showSlide(index) {
+        slider.style.transform = `translateX(${-index * 100 / slides.length}%)`;
+        dots.forEach(dot => dot.classList.remove('active'));
+        dots[index].classList.add('active');
+    }
+
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % slides.length;
+        showSlide(currentIndex);
+    }
+
+    function prevSlide() {
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        showSlide(currentIndex);
+    }
+
+    function currentSlide(index) {
+        currentIndex = index - 1;
+        showSlide(currentIndex);
+    }
+
+    // Initialize the first slide
+    showSlide(currentIndex);
+
+    // Auto-play the slider
+    setInterval(nextSlide, 5000); // Change slide every 5 seconds
+</script>
+
+<script>
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const cookiePopup = document.getElementById('cookie-popup');
+        const acceptBtn = document.getElementById('accept-btn');
+
+        if (!localStorage.getItem('cookieConsent')) {
+            cookiePopup.style.display = 'block'; // Show the popup
+        }
+
+        acceptBtn.addEventListener('click', function () {
+            localStorage.setItem('cookieConsent', 'accepted'); // Set cookie consent
+            cookiePopup.style.display = 'none'; // Hide the popup
+        });
+    });
+
+
+</script>
+
+</body>
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Tabletop Kingdom pin-up hobi",
+        "url": "",
+        "logo": "/favicon/favicon.ico"
+    }
+</script>
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WPHeader",
+        "headline": "Tabletop Kingdom pin-up hobi",
+        "description": "Tabletop Kingdom pin-up hobi, boş zaman ve eğlence olarak keşfedin. Harika oyunlar ve topluluk etkinlikleriyle dolu bir deneyim.",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Tabletop Kingdom pin-up hobi",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "/favicon/favicon.ico"
+            }
+        }
+    }
+</script>
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Tabletop Kingdom pin-up hobi",
+        "description": "Tabletop Kingdom pin-up hobi, boş zaman ve eğlence olarak keşfedin. Harika oyunlar ve topluluk etkinlikleriyle dolu bir deneyim.",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Tabletop Kingdom pin-up hobi"
+        },
+        "license": "A license document that applies to this content, typically indicated by URL"
+    }
+</script>
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SiteNavigationElement",
+        "name": "Main Navigation",
+        "url": "",
+        "hasPart": [
+            {
+                "@type": "WebPage",
+                "name": "Home",
+                "url": ""
+            },
+            {
+                "@type": "WebPage",
+                "name": "Policy",
+                "url": "/policy.html"
+            },
+            {
+                "@type": "WebPage",
+                "name": "Terms of Conditions",
+                "url": "/terms.html"
+            }
+        ]
+    }
+</script>
+</html>

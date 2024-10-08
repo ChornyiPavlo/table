@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabletop Kingdom pin-up - Hobi, Doyası ve Eğlence</title>
+    <meta name="description"
+          content="Tabletop Kingdom pin-up hobi, boş zaman ve eğlence olarak keşfedin. Harika oyunlar ve topluluk etkinlikleriyle dolu bir deneyim.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-48x48.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <link rel="preload" href="img/1_engaging_and_vibrant_scene_for_a_we_2.jpg" as="image">
+    <style>
+
+      body {
+        font-family: Montserrat, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f5f5f5;
+        color: #333;
+      }
+
+      header {
+        background-image: url('img/1_engaging_and_vibrant_scene_for_a_we_2.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        padding: 60px 10px;
+        text-align: center;
+        color: white;
+      }
+
+      nav {
+        margin: 10px 0;
+      }
+
+      nav a {
+        color: white;
+        margin: 0 15px;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      .container {
+        max-width: 1220px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      h1, h2, h3 {
+        color: #7B68EE;
+      }
+
+      .main-image {
+        width: 100%;
+        max-height: 300px;
+        object-fit: cover;
+        border-radius: 8px;
+      }
+
+      section {
+        margin-bottom: 20px;
+      }
+
+      .image-placeholder {
+        background-color: #eaeaea;
+        height: auto;
+        margin: 10px 0;
+        border-radius: 8px;
+      }
+
+      footer {
+        text-align: center;
+        margin-top: 20px;
+        padding: 10px 0;
+        background-color: #7B68EE;
+        color: white;
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          padding: 10px;
+        }
+
+        nav a {
+          margin: 10px 10px;
+          display: inline-flex;
+        }
+      }
+
+      .slider-container {
+        width: 100%;
+        max-width: 1220px;
+        height: 340px;
+        margin: 20px auto;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .slider {
+        display: flex;
+        width: 300%;
+        height: 100%;
+        transition: transform 0.5s ease-in-out;
+      }
+
+      .slide {
+        width: 100%;
+        height: 100%;
+        flex: 0 0 33.3333%;
+        background-size: cover;
+        background-position: center;
+      }
+
+      /* Example background images */
+      .slide-1 {
+        background-image: url('img/2_an_engaging_and_vibrant_scene_for_a_we_2.jpg'); /* Replace with your image */
+      }
+
+      .slide-2 {
+        background-image: url('img/4_an_engaging_and_vibrant_scene_for_a_we_0.jpg'); /* Replace with your image */
+      }
+
+      .slide-3 {
+        background-image: url('img/4_an_engaging_and_vibrant_scene_for_a_we_1.jpg'); /* Replace with your image */
+      }
+
+      /* Navigation buttons */
+      .prev, .next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        z-index: 1;
+      }
+
+      .prev {
+        left: 10px;
+      }
+
+      .next {
+        right: 10px;
+      }
+
+      /* Dots */
+      .dots {
+        text-align: center;
+        margin-top: 10px;
+      }
+
+      .dot {
+        height: 15px;
+        width: 15px;
+        margin: 0 5px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        cursor: pointer;
+      }
+
+      .active {
+        background-color: #7B68EE;
+      }
+
+      @media (max-width: 768px) {
+        .slider-container {
+          height: 240px;
+        }
+
+        .prev, .next {
+          padding: 8px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .slider-container {
+          height: 180px;
+        }
+      }
+
+
+      .cookie-popup {
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #7B68EE;
+        color: white;
+        padding: 20px;
+        border-radius: 5px;
+        display: none; /* Initially hidden */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        z-index: 1000;
+      }
+
+      .cookie-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      button {
+        margin-top: 10px;
+        background-color: white;
+        color: #7B68EE;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+
+      button:hover {
+        background-color: #f1f1f1;
+      }
+
+
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Pin-up: Tabletop Kingdom - Hobi, Doyası ve Eğlence</h1>
+    <nav>
+        <a href="index.html">Ana Sayfa</a>
+        <a href="index.html#about"> Tabletop Kingdom Hakkında</a>
+        <a href="policy.html">Gizlilik Politikası</a>
+        <a href="terms.html">Şartlar ve koşullar</a>
+        <a href="index.html#contact">İletişim</a>
+        <a href="tel:+994502310106">+994502310106</a>
+    </nav>
+</header>
+
+<div class="container">
+    <section>
+        <h1>Gizlilik Politikası</h1>
+        <h3>1. İşlenmiş veriler</h3>
+        <p>1.1. Siteyi kullanarak kişisel verilerinizi toplamıyoruz.</p>
+        <p>1.2. Sitede toplanan tüm veriler
+            anonimleştirilmiş bir biçimde sağlanır ve alınır (bundan böyle “Anonim Veriler” olarak anılacaktır).</p>
+        <p>1.3. Anonim veriler, sizi tanımlamayan aşağıdaki bilgileri içerir:
+        <p>
+        <p>1.3.1. İsim veya telefon numarası
+            ve/veya e-posta adresi dahil olmak üzere Sitenin çevrimiçi formlarını ve program modüllerini kullanarak
+            kendiniz hakkında sağladığınız bilgiler.</p>
+        <p>1.3.2. Kullandığınız yazılımın ayarlarına bağlı olarak
+            otomatik modda anonimleştirilmiş biçimde aktarılan veriler.</p>
+        <p>1.4. Yönetim, Site kullanılarak toplanan
+            Anonimleştirilmiş Kullanıcı Verilerinin bileşimi için gereksinimler belirleme hakkına sahiptir.</p>
+        <p>1.5.
+            Belirli bilgiler zorunlu olarak işaretlenmemişse, sağlanması veya ifşası Kullanıcı tarafından kendi
+            takdirine bağlı olarak ve kendi inisiyatifiyle gerçekleştirilir.</p>
+        <p>1.6. İdare, Kullanıcının iyi
+            niyetle, ihtiyatlı davrandığına ve bu bilgileri güncel tutmak için her türlü çabayı gösterdiğine
+            inanarak,
+            sağlanan verilerin doğruluğunu ve Kullanıcının bu Politikaya uygun olarak işlenmesi için gerekli rızaya
+            sahip olup olmadığını doğrulamaz ve kullanımı için gerekli tüm izinleri alın.</p>
+        <p>1.7. Sitede üçüncü
+            taraf yazılım kullanma olasılığını kabul etmektesiniz, bunun sonucunda bu taraflar madde 1.3'te
+            belirtilen
+            verileri anonim bir biçimde alıp iletebilirler.</p>
+        <p>1.8. Üçüncü taraf yazılımı kullanarak
+            anonimleştirilmiş veri toplamanın bileşimi ve koşulları, doğrudan telif hakkı sahipleri tarafından
+            belirlenir ve şunları içerebilir:
+        <p>
+        <p>1.9. İdare, Anonimleştirilmiş Kullanıcı Verilerinin üçüncü şahıslar
+            tarafından kullanılması prosedüründen sorumlu değildir.</p>
+        <p>2. Veri işlemenin amaçları
+        <p>2.1. Yönetim,
+            verileri aşağıdaki amaçlar için kullanır:
+        <p>
+        <p>2.1.1. Gelen taleplerin işlenmesi ve Kullanıcı ile
+            iletişim;
+        <p>
+        <p>2.1.2. Reklam ve bilgi materyallerinin dağıtımı dahil bilgi hizmeti;
+        <p>
+        <p>2.1.3.
+            Pazarlama, istatistik ve diğer araştırmaları yapmak;
+        <p>
+        <p>2.1.4. Sitedeki reklam materyallerini hedefleme.</p>
+        <p>3.
+            Veri koruma gereksinimleri
+        <p>3.1. Yönetim, verileri depolar ve dahili kural ve düzenlemelere uygun olarak
+            yetkisiz erişime ve dağıtıma karşı korunmalarını sağlar.</p>
+        <p>3.2. Kullanıcı tarafından kamuya
+            açıklanmadıkça ve ayrıca Sitede kullanılan üçüncü şahısların teknoloji ve yazılımlarının veya Kullanıcı
+            tarafından kullanılan yazılımın ayarlarının açık bir değişime izin vermemesi haricinde alınan verilerle
+            ilgili olarak gizlilik korunur. bu kişiler ve/veya diğer internet katılımcıları ve kullanıcıları
+            ile.</p>
+        <p>3.3. Yönetim, iş kalitesini artırmak amacıyla, Site kullanımı kapsamında Kullanıcı tarafından
+            gerçekleştirilen işlemlere ilişkin günlük dosyalarını 1 (Bir) yıl süreyle saklama hakkına sahiptir.A.
+            Giriş
+        <p>
+        <p>1. Web sitemizin kullanıcılarının gizliliği bizim için çok önemlidir ve onu korumak için her
+            türlü çabayı gösteririz. Bu politika, kişisel bilgilerinizi nasıl kullandığımızı açıklar.</p>
+        <p>2. Bu
+            Politikanın hükümlerine uygun olarak web sitemizi ilk ziyaretinizde çerez kullanımımızı kabul ederek,
+            bir
+            sonraki ziyaretinizde çerez kullanmamıza izin vermiş olursunuz.</p>
+        <p>B. Kişisel verilerin
+            toplanması
+        <p>
+        <p>Aşağıdaki kişisel veri türleri toplanmaya, saklanmaya ve kullanıma tabidir:
+        <p>
+        <p>IP
+            adresiniz, coğrafi konumunuz, tarayıcı türünüz ve sürümünüz ve işletim sisteminiz dahil olmak üzere
+            bilgisayarınızla ilgili bilgiler;
+        <p>
+        <p>Yönlendirme kaynakları, ziyaret süreleri, görüntülenen sayfalar ve
+            site gezinme yolları dahil olmak üzere bu siteyi ziyaretiniz ve kullanımınızla ilgili bilgiler;
+        <p>
+        <p>Sitemize
+            kaydolmak için kullandığınız e-posta adresi ile ilgili bilgiler;
+        <p>
+        <p>Sitemizde profil oluştururken
+            girdiğiniz adınız, profil resminiz, cinsiyetiniz, doğum tarihiniz, medeni durumunuz, hobileriniz ve ilgi
+            alanlarınız, eğitiminiz ve iş yeriniz gibi bilgiler;
+        <p>
+        <p>E-postalarımıza ve/veya haber bültenlerimize
+            abone olduğunuzda sağladığınız adınız ve e-posta adresiniz gibi bilgiler;
+        <p>
+        <p>Sitemizdeki hizmetleri
+            kullanırken girdiğiniz bilgiler;
+        <p>
+        <p>Kullanım zamanı, sıklığı ve koşulları hakkında bilgiler de dahil
+            olmak üzere sitemizi kullandığınızda oluşturulan bilgiler;
+        <p>
+        <p>Adınız, adresiniz, telefon numaranız,
+            e-posta adresiniz ve kredi kartı bilgileriniz dahil olmak üzere, web sitemiz aracılığıyla tarafınızca
+            yapılan tüm satın alımlarınız, kullandığınız hizmetler veya yaptığınız işlemlerle ilgili bilgiler;
+        <p>
+        <p>Kullanıcı
+            adınız, profil resminiz ve gönderinizin içeriği dahil olmak üzere, çevrimiçi yayınlamak amacıyla
+            sitemizde
+            yayınladığınız bilgiler;
+        <p>
+        <p>Mesajın içeriği ve verilerin amacı dahil olmak üzere bize e-posta veya web
+            sitemiz aracılığıyla gönderdiğiniz herhangi bir iletişimde yer alan bilgiler;
+        <p>
+        <p>Bize gönderdiğiniz
+            diğer kişisel bilgiler.</p>
+        <p>Kişisel bilgileri bize üçüncü bir tarafa ifşa etmeden önce, bu bilginin bu
+            politikaya uygun olarak hem ifşa edilmesi hem de işlenmesi için o kişinin onayını almalısınız.</p>
+        <p>Kişisel
+            bilgileri bize üçüncü bir tarafa ifşa etmeden önce, bu bilginin bu politikaya uygun olarak hem ifşa
+            edilmesi
+            hem de işlenmesi için o kişinin onayını almalısınız.</p>
+        <p>B. Kişisel bilgilerinizin kullanımı
+        <p>
+        <p>Web
+            sitemiz aracılığıyla bize sağladığınız kişisel bilgiler, bu politikalarda veya sitenin ilgili
+            sayfalarında
+            belirtilen amaçlar için kullanılacaktır. Kişisel bilgilerinizi aşağıdaki amaçlarla kullanabiliriz:
+        <p>
+        <p>web
+            sitemizi ve işimizi işletmek;
+        <p>
+        <p>web sitemizi sizin için özelleştirin;
+        <p>
+        <p>web sitemizde mevcut olan
+            hizmetleri kullanmanıza izin verir;
+        <p>
+        <p>web sitemiz üzerinden satın alınan malları göndermek;
+        <p>
+        <p>web
+            sitemiz aracılığıyla satın alınan hizmetlerin sağlanması;
+        <p>
+        <p>mesajlar, faturalar ve ödeme hatırlatmaları
+            göndermek ve sizden ödeme almak;
+        <p>
+        <p>pazarlama dışı ticari iletişimler göndermek;
+        <p>
+        <p>özellikle davet
+            ettiğiniz e-posta mesajlarını göndermek;
+        <p>
+        <p>sipariş ettiyseniz e-posta ile bir haber bülteni göndermek
+            (bize artık bizden haber bülteni almak istemediğinizi istediğiniz zaman bildirebilirsiniz)
+        <p>
+        <p>işlerimiz
+            veya ilginizi çekebileceğini düşündüğümüz özenle seçilmiş üçüncü şahısların işleri hakkında, ilanlar
+            yoluyla
+            veya buna açıkça izin verdiyseniz, e-posta göndererek veya benzer teknolojiler kullanarak pazarlama
+            iletişimleri göndermek (bize herhangi bir zamanda bildirebilirsiniz). artık pazarlama iletişimi almak
+            istemediğiniz zaman)
+        <p>
+        <p>üçüncü taraflara kullanıcılarımız hakkında istatistiksel bilgiler sağlamak
+            (ancak bu üçüncü taraflar bu verilerden herhangi bir bireysel kullanıcıyı tanımlayamaz).</p>
+        <p>web
+            sitemizle ilgili olarak tarafınızdan veya aleyhinizde yapılan talep ve şikayetlerin ele alınması;
+        <p>
+        <p>web
+            sitemizin güvenliğini sağlamak ve dolandırıcılığı önlemek için;
+        <p>
+        <p>web sitemizin kullanımını yöneten
+            hüküm ve koşullara uygunluğu doğrulamak için (web sitemizin özel mesajlaşma hizmeti aracılığıyla
+            gönderilen
+            özel mesajların izlenmesi dahil)
+        <p>
+        <p>başka amaçlar için.</p>
+        <p>Sitemizde yayınlanmak üzere kişisel
+            bilgilerinizi verdiyseniz, yayınlayacağız. Aksi takdirde, bu bilgileri bize vermiş olduğunuz lisansa
+            uygun
+            olarak kullanacağız.</p>
+    </section>
+</div>
+
+<footer>
+    <p>&copy; 2024 Tabletop Kingdom. Tüm hakları saklıdır. | Nizami 48 Baku AZ 1005, Nizami St, Baku 1000, Azerbaijan |
+        +994502310106 | info@pinupaz.tabletop.com.ua</p>
+</footer>
+
+<div id="cookie-popup" class="cookie-popup">
+    <div class="cookie-content">
+        <h2>Cookie Kullanım Anlaşması</h2>
+        <p>Web sitemizde kullanıcı deneyiminizi geliştirmek için çerezler kullanıyoruz. Sitemizi kullanmaya devam
+            ederek, çerezleri kabul ettiğinizi onaylamış olursunuz.</p>
+        <button id="accept-btn">Kabul Et</button>
+    </div>
+</div>
+
+
+<script>
+    let currentIndex = 0;
+    const slides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.dot');
+    const slider = document.getElementById('slider');
+
+    document.getElementById('nextBtn').addEventListener('click', nextSlide);
+    document.getElementById('prevBtn').addEventListener('click', prevSlide);
+
+    function showSlide(index) {
+        slider.style.transform = `translateX(${-index * 100 / slides.length}%)`;
+        dots.forEach(dot => dot.classList.remove('active'));
+        dots[index].classList.add('active');
+    }
+
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % slides.length;
+        showSlide(currentIndex);
+    }
+
+    function prevSlide() {
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        showSlide(currentIndex);
+    }
+
+    function currentSlide(index) {
+        currentIndex = index - 1;
+        showSlide(currentIndex);
+    }
+
+    // Initialize the first slide
+    showSlide(currentIndex);
+
+    // Auto-play the slider
+    setInterval(nextSlide, 5000); // Change slide every 5 seconds
+</script>
+
+<script>
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const cookiePopup = document.getElementById('cookie-popup');
+        const acceptBtn = document.getElementById('accept-btn');
+
+        if (!localStorage.getItem('cookieConsent')) {
+            cookiePopup.style.display = 'block'; // Show the popup
+        }
+
+        acceptBtn.addEventListener('click', function () {
+            localStorage.setItem('cookieConsent', 'accepted'); // Set cookie consent
+            cookiePopup.style.display = 'none'; // Hide the popup
+        });
+    });
+
+
+</script>
+
+</body>
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Tabletop Kingdom pin-up hobi",
+        "url": "",
+        "logo": "/favicon/favicon.ico"
+    }
+</script>
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WPHeader",
+        "headline": "Tabletop Kingdom pin-up hobi",
+        "description": "Tabletop Kingdom pin-up hobi, boş zaman ve eğlence olarak keşfedin. Harika oyunlar ve topluluk etkinlikleriyle dolu bir deneyim.",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Tabletop Kingdom pin-up hobi",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "/favicon/favicon.ico"
+            }
+        }
+    }
+</script>
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Tabletop Kingdom pin-up hobi",
+        "description": "Tabletop Kingdom pin-up hobi, boş zaman ve eğlence olarak keşfedin. Harika oyunlar ve topluluk etkinlikleriyle dolu bir deneyim.",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Tabletop Kingdom pin-up hobi"
+        },
+        "license": "A license document that applies to this content, typically indicated by URL"
+    }
+</script>
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SiteNavigationElement",
+        "name": "Main Navigation",
+        "url": "",
+        "hasPart": [
+            {
+                "@type": "WebPage",
+                "name": "Home",
+                "url": ""
+            },
+            {
+                "@type": "WebPage",
+                "name": "Policy",
+                "url": "/policy.html"
+            },
+            {
+                "@type": "WebPage",
+                "name": "Terms of Conditions",
+                "url": "/terms.html"
+            }
+        ]
+    }
+</script>
+</html>

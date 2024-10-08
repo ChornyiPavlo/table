@@ -1,0 +1,7 @@
+User-Agent: *
+
+Disallow:
+
+
+Sitemap: http://pinupaz.tabletop.com.ua/sitemap.xml
+Host: pinupaz.tabletop.com.ua
