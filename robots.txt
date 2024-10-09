@@ -3,5 +3,5 @@ User-Agent: *
 Disallow:
 
 
-Sitemap: http://pinupaz.tabletop.com.ua/sitemap.xml
-Host: pinupaz.tabletop.com.ua
+Sitemap: http://pinupaz.entertainmentools.com/sitemap.xml
+Host: pinupaz.entertainmentools.com
